@@ -1,0 +1,6 @@
+# connect to a server without typing a password
+Host 2828-web-01
+User ubuntu
+HostName 34.139.28.87
+IdentityFile ~/.ssh/holberton
+PasswordAuthentication no
