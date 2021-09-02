@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# print domain and subdomain information.
+
+printdomain()
+{
+    options=(+nocmd +nocomments +nostats +noquestion)
+    dig "${options[@]}" "$2.$1" | awk -v var="$2" '{print "The subdomain " var " is a " $4 " record and points to", $5}'
+}
+
+if [ -z "$2" ]
+then
+    printdomain "$1" "www"
+    printdomain "$1" "lb-01"
+    printdomain "$1" "web-01"
+    printdomain "$1" "web-02"
+else
+    printdomain "$1" "$2"
+fi
