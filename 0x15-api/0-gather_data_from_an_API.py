@@ -9,9 +9,9 @@ if __name__ == "__main__":
 
     u = argv[1]
     user = requests.get("http://jsonplaceholder.typicode.com/users/" +
-            u).json()
+                        u).json()
     todos = requests.get("http://jsonplaceholder.typicode.com/todos?userId=" +
-            u).json()
+                         u).json()
     done = requests.get("http://jsonplaceholder.typicode.com/todos?userId=" +
                         u + "&completed=true").json()
 
